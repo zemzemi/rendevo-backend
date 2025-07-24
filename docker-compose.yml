@@ -1,29 +1,29 @@
-version: "3.9"
+version: '3.9'
 
 services:
-  backend:
-    build:
-      context: .
-      dockerfile: Dockerfile
-    container_name: rendevo-backend-dev
-    ports:
-      - "8080:5000"
-    volumes:
-      - .:/app
-      - /app/node_modules
-    env_file:
-      - .env
-    depends_on:
-      - mongo
-    command: npm run dev
+    backend:
+        build:
+            context: .
+            dockerfile: Dockerfile
+        container_name: rendevo-backend-dev
+        ports:
+            - '8080:5000'
+        volumes:
+            - .:/app
+            - ./node_modules:/app/node_modules
+        env_file:
+            - .env
+        depends_on:
+            - mongo
+        command: npm run dev
 
-  mongo:
-    image: mongo:6
-    container_name: rendevo-mongo
-    ports:
-      - "27017:27017"
-    volumes:
-      - mongo-data:/data/db
+    mongo:
+        image: mongo:6
+        container_name: rendevo-mongo
+        ports:
+            - '27017:27017'
+        volumes:
+            - mongo-data:/data/db
 
 volumes:
-  mongo-data:
+    mongo-data:

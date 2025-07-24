@@ -10,7 +10,7 @@ Développé avec :
 - MongoDB (via Mongoose)
 - Docker + Docker Compose
 
-## 🚀 Démarrage rapide (en développement)
+## Démarrage rapide (en développement)
 
 ### Prérequis
 
